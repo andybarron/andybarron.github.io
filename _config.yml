@@ -1,0 +1,14 @@
+# Site settings
+title: Andy Barron
+email: alb4dx@virginia.edu
+description: > # this means to ignore newlines until "baseurl:"
+  Awesome description
+  goes
+  here.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://andybarron.net" # the base hostname & protocol for your site
+twitter_username: AndyLBarron
+github_username:  AndyBarron
+
+# Build settings
+markdown: kramdown
