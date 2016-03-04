@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["PreferencesError","Error type representing the errors that can occur when saving or loading user data."]],"trait":[["PreferencesTrait","Trait for types that can be saved & loaded as user data."]],"type":[["PreferencesMap","Generic key-value store for user data."]]});
