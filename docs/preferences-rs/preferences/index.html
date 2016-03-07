@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/preferences/src/lib.rs.html#1-356' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/preferences/src/lib.rs.html#1-378' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><em>Read and write user-specific application data</em></p>
 
 <p>This crate allows Rust developers to store and retrieve user-local preferences and other
@@ -191,9 +191,9 @@ and only if you store custom data types in your user data.</p>
 the operating system.</p>
 
 <ul>
-<li>Mac OS X: <code>~/Library/Preferences</code></li>
-<li>Other Unix/Linux: <code>~/.config</code></li>
-<li>Windows: <code>%USERPROFILE%\AppData\Roaming</code> (a.k.a. <code>%APPDATA%</code>)</li>
+<li>Mac OS X: <code>~/Library/Application Support</code></li>
+<li>Other Unix/Linux: <code>$XDG_DATA_HOME</code>, defaulting to <code>~/.local/share</code> if not set</li>
+<li>Windows: <code>%APPDATA%</code>, defaulting to <code>&lt;std::env::home_dir()&gt;\AppData\Roaming</code> if not set</li>
 </ul>
 
 <p>The data is stored in JSON format. This has several advantages:</p>
