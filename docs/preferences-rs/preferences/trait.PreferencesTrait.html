@@ -46,14 +46,14 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-34' class='srclink' href='../src/preferences/src/lib.rs.html#229-247' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-47' class='srclink' href='../src/preferences/src/lib.rs.html#253-271' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait PreferencesTrait {
     fn <a href='#tymethod.save' class='fnname'>save</a>&lt;S&gt;(&amp;self, path: S) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../preferences/enum.PreferencesError.html' title='preferences::PreferencesError'>PreferencesError</a>&gt; <span class='where'>where S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</span>;
     fn <a href='#tymethod.load' class='fnname'>load</a>&lt;S&gt;(&amp;mut self, path: S) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../preferences/enum.PreferencesError.html' title='preferences::PreferencesError'>PreferencesError</a>&gt; <span class='where'>where S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</span>;
 }</pre><div class='docblock'><p>Trait for types that can be saved &amp; loaded as user data.</p>
 
-<p>This type is automatically implemented for any type <code>T</code> which implements both <code>Serialize</code> and
-<code>Deserialize</code>. However, you are encouraged to use the provided type,
+<p>This type is automatically implemented for any type <code>T</code> which implements both <code>Encodable</code> and
+<code>Decodable</code> (from <code>rustc-serialize</code>). However, you are encouraged to use the provided type,
 <a href="type.PreferencesMap.html"><code>PreferencesMap</code></a>.</p>
 
 <p>The <code>path</code> parameter of <code>save(..)</code> and <code>load(..)</code> should be a valid, relative file path. It is
@@ -69,7 +69,7 @@ the following paths for player options and save data, respectively:</p>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
         <h3 id='tymethod.save' class='method stab '><code>fn <a href='#tymethod.save' class='fnname'>save</a>&lt;S&gt;(&amp;self, path: S) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../preferences/enum.PreferencesError.html' title='preferences::PreferencesError'>PreferencesError</a>&gt; <span class='where'>where S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</span></code></h3><div class='docblock'><p>Saves the current state of this object. Implementation is platform-dependent, but the data
-will be local to the active user. For more details, see 
+will be local to the active user. For more details, see
 <a href="index.html">the module documentation</a>.</p>
 
 <h1 id='failures' class='section-header'><a href='#failures'>Failures</a></h1>
