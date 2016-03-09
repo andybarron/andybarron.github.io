@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AppDirError",""],["AppDirType",""]],"fn":[["get_app_dir",""]],"struct":[["AppInfo",""]],"type":[["AppDirResult",""]]});
