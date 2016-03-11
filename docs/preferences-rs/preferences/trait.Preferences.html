@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `PreferencesTrait` trait in crate `preferences`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, PreferencesTrait">
+    <meta name="description" content="API documentation for the Rust `Preferences` trait in crate `preferences`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Preferences">
 
-    <title>preferences::PreferencesTrait - Rust</title>
+    <title>preferences::Preferences - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
@@ -27,7 +27,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'><a href='index.html'>preferences</a></p><script>window.sidebarCurrent = {name: 'PreferencesTrait', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'><a href='index.html'>preferences</a></p><script>window.sidebarCurrent = {name: 'Preferences', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -42,14 +42,16 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>preferences</a>::<wbr><a class='trait' href=''>PreferencesTrait</a></span><span class='out-of-band'><span id='render-detail'>
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>preferences</a>::<wbr><a class='trait' href=''>Preferences</a></span><span class='out-of-band'><span id='render-detail'>
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-50' class='srclink' href='../src/preferences/src/lib.rs.html#282-300' title='goto source code'>[src]</a></span></h1>
-<pre class='rust trait'>pub trait PreferencesTrait {
+        </span><a id='src-50' class='srclink' href='../src/preferences/src/lib.rs.html#375-397' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait Preferences {
     fn <a href='#tymethod.save' class='fnname'>save</a>&lt;S&gt;(&amp;self, path: S) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../preferences/enum.PreferencesError.html' title='preferences::PreferencesError'>PreferencesError</a>&gt; <span class='where'>where S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</span>;
     fn <a href='#tymethod.load' class='fnname'>load</a>&lt;S&gt;(&amp;mut self, path: S) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../preferences/enum.PreferencesError.html' title='preferences::PreferencesError'>PreferencesError</a>&gt; <span class='where'>where S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</span>;
+    fn <a href='#tymethod.save_to' class='fnname'>save_to</a>&lt;W&gt;(&amp;self, writer: &amp;mut W) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../preferences/enum.PreferencesError.html' title='preferences::PreferencesError'>PreferencesError</a>&gt; <span class='where'>where W: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Write.html' title='std::io::Write'>Write</a></span>;
+    fn <a href='#tymethod.load_from' class='fnname'>load_from</a>&lt;R&gt;(&amp;mut self, reader: &amp;mut R) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../preferences/enum.PreferencesError.html' title='preferences::PreferencesError'>PreferencesError</a>&gt; <span class='where'>where R: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Read.html' title='std::io::Read'>Read</a></span>;
 }</pre><div class='docblock'><p>Trait for types that can be saved &amp; loaded as user data.</p>
 
 <p>This type is automatically implemented for any type <code>T</code> which implements both <code>Encodable</code> and
@@ -83,11 +85,13 @@ the preferences object.</p>
 <h1 id='failures-1' class='section-header'><a href='#failures-1'>Failures</a></h1>
 <p>If a deserialization or file I/O error occurs (e.g. permission denied), if the provided
 <code>path</code> argument is invalid, or if no user data exists at that <code>path</code>.</p>
+</div><h3 id='tymethod.save_to' class='method stab '><code>fn <a href='#tymethod.save_to' class='fnname'>save_to</a>&lt;W&gt;(&amp;self, writer: &amp;mut W) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../preferences/enum.PreferencesError.html' title='preferences::PreferencesError'>PreferencesError</a>&gt; <span class='where'>where W: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Write.html' title='std::io::Write'>Write</a></span></code></h3><div class='docblock'><p>Same as <code>save</code>, but writes the serialized preferences to an arbitrary writer.</p>
+</div><h3 id='tymethod.load_from' class='method stab '><code>fn <a href='#tymethod.load_from' class='fnname'>load_from</a>&lt;R&gt;(&amp;mut self, reader: &amp;mut R) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../preferences/enum.PreferencesError.html' title='preferences::PreferencesError'>PreferencesError</a>&gt; <span class='where'>where R: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Read.html' title='std::io::Read'>Read</a></span></code></h3><div class='docblock'><p>Same as <code>load</code>, but reads the serialized preferences from an arbitrary writer.</p>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
     </ul><script type="text/javascript" async
-                              src="../implementors/preferences/trait.PreferencesTrait.js">
+                              src="../implementors/preferences/trait.Preferences.js">
                       </script></section>
     <section id='search' class="content hidden"></section>
 

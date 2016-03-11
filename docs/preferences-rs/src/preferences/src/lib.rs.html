@@ -419,6 +419,122 @@
 <span id="376">376</span>
 <span id="377">377</span>
 <span id="378">378</span>
+<span id="379">379</span>
+<span id="380">380</span>
+<span id="381">381</span>
+<span id="382">382</span>
+<span id="383">383</span>
+<span id="384">384</span>
+<span id="385">385</span>
+<span id="386">386</span>
+<span id="387">387</span>
+<span id="388">388</span>
+<span id="389">389</span>
+<span id="390">390</span>
+<span id="391">391</span>
+<span id="392">392</span>
+<span id="393">393</span>
+<span id="394">394</span>
+<span id="395">395</span>
+<span id="396">396</span>
+<span id="397">397</span>
+<span id="398">398</span>
+<span id="399">399</span>
+<span id="400">400</span>
+<span id="401">401</span>
+<span id="402">402</span>
+<span id="403">403</span>
+<span id="404">404</span>
+<span id="405">405</span>
+<span id="406">406</span>
+<span id="407">407</span>
+<span id="408">408</span>
+<span id="409">409</span>
+<span id="410">410</span>
+<span id="411">411</span>
+<span id="412">412</span>
+<span id="413">413</span>
+<span id="414">414</span>
+<span id="415">415</span>
+<span id="416">416</span>
+<span id="417">417</span>
+<span id="418">418</span>
+<span id="419">419</span>
+<span id="420">420</span>
+<span id="421">421</span>
+<span id="422">422</span>
+<span id="423">423</span>
+<span id="424">424</span>
+<span id="425">425</span>
+<span id="426">426</span>
+<span id="427">427</span>
+<span id="428">428</span>
+<span id="429">429</span>
+<span id="430">430</span>
+<span id="431">431</span>
+<span id="432">432</span>
+<span id="433">433</span>
+<span id="434">434</span>
+<span id="435">435</span>
+<span id="436">436</span>
+<span id="437">437</span>
+<span id="438">438</span>
+<span id="439">439</span>
+<span id="440">440</span>
+<span id="441">441</span>
+<span id="442">442</span>
+<span id="443">443</span>
+<span id="444">444</span>
+<span id="445">445</span>
+<span id="446">446</span>
+<span id="447">447</span>
+<span id="448">448</span>
+<span id="449">449</span>
+<span id="450">450</span>
+<span id="451">451</span>
+<span id="452">452</span>
+<span id="453">453</span>
+<span id="454">454</span>
+<span id="455">455</span>
+<span id="456">456</span>
+<span id="457">457</span>
+<span id="458">458</span>
+<span id="459">459</span>
+<span id="460">460</span>
+<span id="461">461</span>
+<span id="462">462</span>
+<span id="463">463</span>
+<span id="464">464</span>
+<span id="465">465</span>
+<span id="466">466</span>
+<span id="467">467</span>
+<span id="468">468</span>
+<span id="469">469</span>
+<span id="470">470</span>
+<span id="471">471</span>
+<span id="472">472</span>
+<span id="473">473</span>
+<span id="474">474</span>
+<span id="475">475</span>
+<span id="476">476</span>
+<span id="477">477</span>
+<span id="478">478</span>
+<span id="479">479</span>
+<span id="480">480</span>
+<span id="481">481</span>
+<span id="482">482</span>
+<span id="483">483</span>
+<span id="484">484</span>
+<span id="485">485</span>
+<span id="486">486</span>
+<span id="487">487</span>
+<span id="488">488</span>
+<span id="489">489</span>
+<span id="490">490</span>
+<span id="491">491</span>
+<span id="492">492</span>
+<span id="493">493</span>
+<span id="494">494</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! *Read and write user-specific application data*</span>
 <span class='doccomment'>//!</span>
@@ -437,9 +553,9 @@
 <span class='doccomment'>//! actually just a [`std::collections::HashMap&lt;String, T&gt;`][hashmap-api], where `T` defaults to</span>
 <span class='doccomment'>//! `String`). This mirrors the Java API, which models user data as an opaque key-value store. As</span>
 <span class='doccomment'>//! long as the map is instantiated over a type `T` which is serializable and deserializable,</span>
-<span class='doccomment'>//! [`PreferencesTrait`](trait.PreferencesTrait.html) will be implemented for your map instance.</span>
+<span class='doccomment'>//! [`Preferences`](trait.Preferences.html) will be implemented for your map instance.</span>
 <span class='doccomment'>//! This will allow you to seamlessly save and load user data with the `save(..)` and `load(..)`</span>
-<span class='doccomment'>//! methods on `PreferencesTrait`.</span>
+<span class='doccomment'>//! methods on `Preferences`.</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! # Roadmap</span>
 <span class='doccomment'>//! This crate aims to provide a convenient API for both stable and nightly Rust, which is why</span>
@@ -454,7 +570,7 @@
 <span class='doccomment'>//! # Basic example</span>
 <span class='doccomment'>//! ```</span>
 <span class='doccomment'>//! extern crate preferences;</span>
-<span class='doccomment'>//! use preferences::{PreferencesMap, PreferencesTrait};</span>
+<span class='doccomment'>//! use preferences::{PreferencesMap, Preferences};</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! fn main() {</span>
 <span class='doccomment'>//!</span>
@@ -485,7 +601,7 @@
 <span class='doccomment'>//! ```</span>
 <span class='doccomment'>//! extern crate rustc_serialize;</span>
 <span class='doccomment'>//! extern crate preferences;</span>
-<span class='doccomment'>//! use preferences::{PreferencesMap, PreferencesTrait};</span>
+<span class='doccomment'>//! use preferences::{PreferencesMap, Preferences};</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! #[derive(RustcEncodable, RustcDecodable, PartialEq, Debug)]</span>
 <span class='doccomment'>//! struct PlayerData {</span>
@@ -512,7 +628,7 @@
 <span class='doccomment'>//! ```</span>
 <span class='doccomment'>//! extern crate rustc_serialize;</span>
 <span class='doccomment'>//! extern crate preferences;</span>
-<span class='doccomment'>//! use preferences::{PreferencesMap, PreferencesTrait};</span>
+<span class='doccomment'>//! use preferences::{PreferencesMap, Preferences};</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! #[derive(RustcEncodable, RustcDecodable, PartialEq, Debug)]</span>
 <span class='doccomment'>//! struct Point(f32, f32);</span>
@@ -538,7 +654,7 @@
 <span class='doccomment'>//! ```</span>
 <span class='doccomment'>//! extern crate rustc_serialize;</span>
 <span class='doccomment'>//! extern crate preferences;</span>
-<span class='doccomment'>//! use preferences::{PreferencesMap, PreferencesTrait};</span>
+<span class='doccomment'>//! use preferences::{PreferencesMap, Preferences};</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! #[derive(RustcEncodable, RustcDecodable, PartialEq, Debug)]</span>
 <span class='doccomment'>//! struct Point(usize, usize);</span>
@@ -568,7 +684,7 @@
 <span class='doccomment'>//! the operating system.</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! * Mac OS X: `~/Library/Application Support`</span>
-<span class='doccomment'>//! * Other Unix/Linux: `$XDG_DATA_HOME`, defaulting to `~/.local/share` if not set</span>
+<span class='doccomment'>//! * Other Unix/Linux: `$XDG_CONFIG_HOME`, defaulting to `~/.config` if not set</span>
 <span class='doccomment'>//! * Windows: `%APPDATA%`, defaulting to `&lt;std::env::home_dir()&gt;\AppData\Roaming` if not set</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! The data is stored in JSON format. This has several advantages:</span>
@@ -578,7 +694,7 @@
 <span class='doccomment'>//! * Better adoption rates and language compatibility than e.g. TOML</span>
 <span class='doccomment'>//! * Not reliant on a consistent memory layout like e.g. binary</span>
 <span class='doccomment'>//!</span>
-<span class='doccomment'>//! You could, of course, implement `PreferencesTrait` yourself and store your user data in</span>
+<span class='doccomment'>//! You could, of course, implement `Preferences` yourself and store your user data in</span>
 <span class='doccomment'>//! whatever location and format that you wanted. But that would defeat the purpose of this</span>
 <span class='doccomment'>//! library. &amp;#128522;</span>
 <span class='doccomment'>//!</span>
@@ -589,6 +705,13 @@
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>warn</span>(<span class='ident'>missing_docs</span>)]</span>
 
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>rustc_serialize</span>;
+
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>windows</span>)]</span>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>winapi</span>;
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>windows</span>)]</span>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>shell32</span>;
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>windows</span>)]</span>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>ole32</span>;
 
 <span class='kw'>use</span> <span class='ident'>rustc_serialize</span>::{<span class='ident'>Encodable</span>, <span class='ident'>Decodable</span>};
 <span class='kw'>use</span> <span class='ident'>rustc_serialize</span>::<span class='ident'>json</span>::{<span class='self'>self</span>, <span class='ident'>EncoderError</span>, <span class='ident'>DecoderError</span>};
@@ -611,11 +734,11 @@
 
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>all</span>(<span class='ident'>unix</span>, <span class='ident'>not</span>(<span class='ident'>target_os</span><span class='op'>=</span><span class='string'>&quot;macos&quot;</span>)))]</span>
 <span class='kw'>fn</span> <span class='ident'>get_prefs_base_path</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span> {
-    <span class='kw'>match</span> <span class='ident'>env</span>::<span class='ident'>var</span>(<span class='string'>&quot;XDG_DATA_HOME&quot;</span>) {
+    <span class='kw'>match</span> <span class='ident'>env</span>::<span class='ident'>var</span>(<span class='string'>&quot;XDG_CONFIG_HOME&quot;</span>) {
         <span class='prelude-val'>Ok</span>(<span class='ident'>path_str</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>path_str</span>.<span class='ident'>into</span>()),
         <span class='prelude-val'>Err</span>(..) <span class='op'>=&gt;</span> {
             <span class='ident'>env</span>::<span class='ident'>home_dir</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='kw-2'>mut</span> <span class='ident'>dir</span><span class='op'>|</span> {
-                <span class='ident'>dir</span>.<span class='ident'>push</span>(<span class='string'>&quot;.local/share&quot;</span>);
+                <span class='ident'>dir</span>.<span class='ident'>push</span>(<span class='string'>&quot;.config&quot;</span>);
                 <span class='ident'>dir</span>
             })
         }
@@ -623,8 +746,94 @@
 }
 
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>windows</span>)]</span>
+<span class='kw'>mod</span> <span class='ident'>windows</span> {
+    <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>slice</span>;
+    <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ptr</span>;
+    <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::<span class='ident'>OsString</span>;
+    <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>os</span>::<span class='ident'>windows</span>::<span class='ident'>ffi</span>::<span class='ident'>OsStringExt</span>;
+
+    <span class='kw'>use</span> <span class='ident'>winapi</span>;
+    <span class='kw'>use</span> <span class='ident'>shell32</span>::<span class='ident'>SHGetKnownFolderPath</span>;
+    <span class='kw'>use</span> <span class='ident'>ole32</span>;
+
+    <span class='comment'>// This value is not currently exported by any of the winapi crates, but</span>
+    <span class='comment'>// its exact value is specified in the MSDN documentation.</span>
+    <span class='comment'>// https://msdn.microsoft.com/en-us/library/dd378457.aspx#FOLDERID_RoamingAppData</span>
+    <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>non_upper_case_globals</span>)]</span>
+    <span class='kw'>static</span> <span class='ident'>FOLDERID_RoamingAppData</span>: <span class='ident'>winapi</span>::<span class='ident'>GUID</span> <span class='op'>=</span> <span class='ident'>winapi</span>::<span class='ident'>GUID</span> {
+        <span class='ident'>Data1</span>: <span class='number'>0x3EB685DB</span>,
+        <span class='ident'>Data2</span>: <span class='number'>0x65F9</span>,
+        <span class='ident'>Data3</span>: <span class='number'>0x4CF6</span>,
+        <span class='ident'>Data4</span>: [<span class='number'>0xA0</span>, <span class='number'>0x3A</span>, <span class='number'>0xE3</span>, <span class='number'>0xEF</span>, <span class='number'>0x65</span>, <span class='number'>0x72</span>, <span class='number'>0x9F</span>, <span class='number'>0x3D</span>],
+    };
+
+    <span class='comment'>// Retrieves the OsString for AppData using the proper Win32</span>
+    <span class='comment'>// function without relying on environment variables</span>
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_appdata</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>OsString</span>, ()<span class='op'>&gt;</span> {
+        <span class='kw'>unsafe</span> {
+            <span class='comment'>// A Wide c-style string pointer which will be filled by</span>
+            <span class='comment'>// SHGetKnownFolderPath. We are responsible for freeing</span>
+            <span class='comment'>// this value if the call succeeds</span>
+            <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>raw_path</span>: <span class='ident'>winapi</span>::<span class='ident'>PWSTR</span> <span class='op'>=</span> <span class='ident'>ptr</span>::<span class='ident'>null_mut</span>();
+
+            <span class='comment'>// Get RoamingAppData&#39;s path</span>
+            <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='ident'>SHGetKnownFolderPath</span>(<span class='kw-2'>&amp;</span><span class='ident'>FOLDERID_RoamingAppData</span>,
+                                              <span class='number'>0</span>, <span class='comment'>// No extra flags are neccesary</span>
+                                              <span class='ident'>ptr</span>::<span class='ident'>null_mut</span>(), <span class='comment'>// user context, null = current user</span>
+                                              <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>raw_path</span>);
+
+            <span class='comment'>// SHGetKnownFolderPath returns an HRESULT, which represents</span>
+            <span class='comment'>// failure states by being negative. This should not fail, but</span>
+            <span class='comment'>// we should be prepared should it fail some day.</span>
+            <span class='kw'>if</span> <span class='ident'>result</span> <span class='op'>&lt;</span> <span class='number'>0</span> {
+                <span class='kw'>return</span> <span class='prelude-val'>Err</span>(());
+            }
+
+            <span class='comment'>// Since SHGetKnownFolderPath succeeded, we must ensure that we</span>
+            <span class='comment'>// free the memory even if allocating an OsString fails later on.</span>
+            <span class='comment'>// To do this, we will use a nested struct with a Drop implementation</span>
+            <span class='kw'>let</span> <span class='ident'>_cleanup</span> <span class='op'>=</span> {
+                <span class='kw'>struct</span> <span class='ident'>FreeStr</span>(<span class='ident'>winapi</span>::<span class='ident'>PWSTR</span>);
+                <span class='kw'>impl</span> <span class='ident'>Drop</span> <span class='kw'>for</span> <span class='ident'>FreeStr</span> {
+                    <span class='kw'>fn</span> <span class='ident'>drop</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) {
+                        <span class='kw'>unsafe</span> { <span class='ident'>ole32</span>::<span class='ident'>CoTaskMemFree</span>(<span class='self'>self</span>.<span class='number'>0</span> <span class='kw'>as</span> <span class='op'>*</span><span class='kw-2'>mut</span> _) };
+                    }
+                }
+                <span class='ident'>FreeStr</span>(<span class='ident'>raw_path</span>)
+            };
+
+            <span class='comment'>// libstd does not contain a wide-char strlen as far as I know,</span>
+            <span class='comment'>// so we&#39;ll have to make do calculating it ourselves.</span>
+            <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>strlen</span> <span class='op'>=</span> <span class='number'>0</span>;
+            <span class='kw'>for</span> <span class='ident'>i</span> <span class='kw'>in</span> <span class='number'>0</span>.. {
+                <span class='kw'>if</span> <span class='op'>*</span><span class='ident'>raw_path</span>.<span class='ident'>offset</span>(<span class='ident'>i</span>) <span class='op'>==</span> <span class='number'>0</span> {
+                    <span class='comment'>// isize -&gt; usize is always safe here because we know</span>
+                    <span class='comment'>// that an isize can hold the positive length, as each</span>
+                    <span class='comment'>// char is 2 bytes long, and so could only be half of</span>
+                    <span class='comment'>// the memory space even theoretically.</span>
+                    <span class='ident'>strlen</span> <span class='op'>=</span> <span class='ident'>i</span> <span class='kw'>as</span> <span class='ident'>usize</span>;
+                    <span class='kw'>break</span>;
+                }
+            }
+
+            <span class='comment'>// Now that we know the length of the string, we can</span>
+            <span class='comment'>// convert it to a &amp;[u16]</span>
+            <span class='kw'>let</span> <span class='ident'>wpath</span> <span class='op'>=</span> <span class='ident'>slice</span>::<span class='ident'>from_raw_parts</span>(<span class='ident'>raw_path</span>, <span class='ident'>strlen</span>);
+            <span class='comment'>// Window&#39;s OsStringExt has the function from_wide for</span>
+            <span class='comment'>// converting a &amp;[u16] into an OsString.</span>
+            <span class='kw'>let</span> <span class='ident'>path</span> <span class='op'>=</span> <span class='ident'>OsStringExt</span>::<span class='ident'>from_wide</span>(<span class='ident'>wpath</span>);
+
+            <span class='comment'>// raw_path will be automatically freed by _cleanup, regardless of</span>
+            <span class='comment'>// whether any of the previous functions panic.</span>
+
+            <span class='prelude-val'>Ok</span>(<span class='ident'>path</span>)
+        }
+    }
+}
+
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>windows</span>)]</span>
 <span class='kw'>fn</span> <span class='ident'>get_prefs_base_path</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span> {
-    <span class='kw'>match</span> <span class='ident'>env</span>::<span class='ident'>var</span>(<span class='string'>&quot;APPDATA&quot;</span>) {
+    <span class='kw'>match</span> <span class='ident'>windows</span>::<span class='ident'>get_appdata</span>() {
         <span class='prelude-val'>Ok</span>(<span class='ident'>path_str</span>) <span class='op'>=&gt;</span> <span class='prelude-val'>Some</span>(<span class='ident'>path_str</span>.<span class='ident'>into</span>()),
         <span class='prelude-val'>Err</span>(..) <span class='op'>=&gt;</span> {
             <span class='ident'>env</span>::<span class='ident'>home_dir</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='kw-2'>mut</span> <span class='ident'>dir</span><span class='op'>|</span> {
@@ -643,7 +852,7 @@
 <span class='doccomment'>/// data in memory.</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// To save or load user data, use the methods defined for</span>
-<span class='doccomment'>/// [`PreferencesTrait`](trait.PreferencesTrait.html), which will be automatically implemented for</span>
+<span class='doccomment'>/// [`Preferences`](trait.Preferences.html), which will be automatically implemented for</span>
 <span class='doccomment'>/// `PreferencesMap&lt;T&gt;` as long as `T` is serializable. (See the</span>
 <span class='doccomment'>/// [module documentation](index.html) for examples and more details.)</span>
 <span class='doccomment'>///</span>
@@ -701,7 +910,7 @@
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// * `fun-games-inc/awesome-game-2/options`</span>
 <span class='doccomment'>/// * `fun-games-inc/awesome-game-2/saves`</span>
-<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>PreferencesTrait</span> {
+<span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Preferences</span> {
     <span class='doccomment'>/// Saves the current state of this object. Implementation is platform-dependent, but the data</span>
     <span class='doccomment'>/// will be local to the active user. For more details, see</span>
     <span class='doccomment'>/// [the module documentation](index.html).</span>
@@ -719,9 +928,13 @@
     <span class='doccomment'>/// If a deserialization or file I/O error occurs (e.g. permission denied), if the provided</span>
     <span class='doccomment'>/// `path` argument is invalid, or if no user data exists at that `path`.</span>
     <span class='kw'>fn</span> <span class='ident'>load</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>path</span>: <span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>PreferencesError</span><span class='op'>&gt;</span> <span class='kw'>where</span> <span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span>;
+    <span class='doccomment'>/// Same as `save`, but writes the serialized preferences to an arbitrary writer.</span>
+    <span class='kw'>fn</span> <span class='ident'>save_to</span><span class='op'>&lt;</span><span class='ident'>W</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>writer</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>PreferencesError</span><span class='op'>&gt;</span> <span class='kw'>where</span> <span class='ident'>W</span>: <span class='ident'>Write</span>;
+    <span class='doccomment'>/// Same as `load`, but reads the serialized preferences from an arbitrary writer.</span>
+    <span class='kw'>fn</span> <span class='ident'>load_from</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>reader</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>R</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>PreferencesError</span><span class='op'>&gt;</span> <span class='kw'>where</span> <span class='ident'>R</span>: <span class='ident'>Read</span>;
 }
 
-<span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span> <span class='ident'>PreferencesTrait</span> <span class='kw'>for</span> <span class='ident'>T</span>
+<span class='kw'>impl</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span> <span class='ident'>Preferences</span> <span class='kw'>for</span> <span class='ident'>T</span>
     <span class='kw'>where</span> <span class='ident'>T</span>: <span class='ident'>Encodable</span> <span class='op'>+</span> <span class='ident'>Decodable</span>
 {
     <span class='kw'>fn</span> <span class='ident'>save</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>path</span>: <span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>PreferencesError</span><span class='op'>&gt;</span>
@@ -730,23 +943,42 @@
         <span class='kw'>let</span> <span class='ident'>path</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>path_buf_from_name</span>(<span class='ident'>path</span>.<span class='ident'>as_ref</span>()));
         <span class='ident'>path</span>.<span class='ident'>parent</span>().<span class='ident'>map</span>(<span class='ident'>create_dir_all</span>);
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>file</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>File</span>::<span class='ident'>create</span>(<span class='ident'>path</span>));
-        <span class='kw'>let</span> <span class='ident'>encoded</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>json</span>::<span class='ident'>encode</span>(<span class='self'>self</span>));
-        <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>file</span>.<span class='ident'>write_all</span>(<span class='ident'>encoded</span>.<span class='ident'>as_bytes</span>()));
-        <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>file</span>.<span class='ident'>flush</span>());
-        <span class='prelude-val'>Ok</span>(())
+        <span class='self'>self</span>.<span class='ident'>save_to</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>file</span>)
     }
     <span class='kw'>fn</span> <span class='ident'>load</span><span class='op'>&lt;</span><span class='ident'>S</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>path</span>: <span class='ident'>S</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>PreferencesError</span><span class='op'>&gt;</span>
         <span class='kw'>where</span> <span class='ident'>S</span>: <span class='ident'>AsRef</span><span class='op'>&lt;</span><span class='ident'>str</span><span class='op'>&gt;</span>
     {
         <span class='kw'>let</span> <span class='ident'>path</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>path_buf_from_name</span>(<span class='ident'>path</span>.<span class='ident'>as_ref</span>()));
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>file</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>File</span>::<span class='ident'>open</span>(<span class='ident'>path</span>));
+        <span class='self'>self</span>.<span class='ident'>load_from</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>file</span>)
+    }
+    <span class='kw'>fn</span> <span class='ident'>save_to</span><span class='op'>&lt;</span><span class='ident'>W</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>writer</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>W</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>PreferencesError</span><span class='op'>&gt;</span>
+        <span class='kw'>where</span> <span class='ident'>W</span>: <span class='ident'>Write</span>
+    {
+        <span class='kw'>let</span> <span class='ident'>encoded</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>json</span>::<span class='ident'>encode</span>(<span class='self'>self</span>));
+        <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>writer</span>.<span class='ident'>write_all</span>(<span class='ident'>encoded</span>.<span class='ident'>as_bytes</span>()));
+        <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>writer</span>.<span class='ident'>flush</span>());
+        <span class='prelude-val'>Ok</span>(())
+    }
+    <span class='kw'>fn</span> <span class='ident'>load_from</span><span class='op'>&lt;</span><span class='ident'>R</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>reader</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>R</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>PreferencesError</span><span class='op'>&gt;</span>
+        <span class='kw'>where</span> <span class='ident'>R</span>: <span class='ident'>Read</span>
+    {
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>bytes</span> <span class='op'>=</span> <span class='ident'>Vec</span>::<span class='ident'>new</span>();
-        <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>file</span>.<span class='ident'>read_to_end</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>bytes</span>));
+        <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>reader</span>.<span class='ident'>read_to_end</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>bytes</span>));
         <span class='kw'>let</span> <span class='ident'>encoded</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>String</span>::<span class='ident'>from_utf8</span>(<span class='ident'>bytes</span>));
         <span class='kw'>let</span> <span class='ident'>new_self</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>json</span>::<span class='ident'>decode</span>(<span class='kw-2'>&amp;</span><span class='ident'>encoded</span>));
         <span class='op'>*</span><span class='self'>self</span> <span class='op'>=</span> <span class='ident'>new_self</span>;
         <span class='prelude-val'>Ok</span>(())
     }
+}
+
+<span class='doccomment'>/// Get full path to the base directory for preferences.</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// This makes no guarantees that the specified directory path actually *exists* (though you can</span>
+<span class='doccomment'>/// easily use `std::fs::create_dir_all(..)`). Returns `None` if the directory cannot be found</span>
+<span class='doccomment'>/// or is not available on the current platform.</span>
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>prefs_base_dir</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span> {
+    <span class='ident'>get_prefs_base_path</span>()
 }
 
 <span class='kw'>fn</span> <span class='ident'>path_buf_from_name</span>(<span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span>, <span class='ident'>IoError</span><span class='op'>&gt;</span> {
@@ -771,7 +1003,7 @@
 
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>test</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>tests</span> {
-    <span class='kw'>use</span> {<span class='ident'>PreferencesTrait</span>, <span class='ident'>PreferencesMap</span>};
+    <span class='kw'>use</span> {<span class='ident'>Preferences</span>, <span class='ident'>PreferencesMap</span>};
     <span class='kw'>static</span> <span class='ident'>TEST_PREFIX</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span> <span class='op'>=</span> <span class='string'>&quot;rust_user_prefs_test&quot;</span>;
     <span class='kw'>fn</span> <span class='ident'>gen_test_name</span>(<span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
         <span class='ident'>TEST_PREFIX</span>.<span class='ident'>to_owned</span>() <span class='op'>+</span> <span class='string'>&quot;/&quot;</span> <span class='op'>+</span> <span class='ident'>name</span>
