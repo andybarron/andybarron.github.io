@@ -4,10 +4,10 @@
     <title>Andy Barron</title>
     <description>Awesome description goes here.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 Nov 2016 14:19:40 -0800</pubDate>
-    <lastBuildDate>Thu, 10 Nov 2016 14:19:40 -0800</lastBuildDate>
+    <link>https://andybarron.github.io/</link>
+    <atom:link href="https://andybarron.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 10 Nov 2016 14:23:16 -0800</pubDate>
+    <lastBuildDate>Thu, 10 Nov 2016 14:23:16 -0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -31,8 +31,8 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 [jekyll-help]: https://github.com/jekyll/jekyll-help --&gt;
 </description>
         <pubDate>Thu, 23 Jul 2015 00:00:00 -0700</pubDate>
-        <link>http://localhost:4000/2015/07/23/hello-world/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/07/23/hello-world/</guid>
+        <link>https://andybarron.github.io/2015/07/23/hello-world/</link>
+        <guid isPermaLink="true">https://andybarron.github.io/2015/07/23/hello-world/</guid>
         
         
       </item>
