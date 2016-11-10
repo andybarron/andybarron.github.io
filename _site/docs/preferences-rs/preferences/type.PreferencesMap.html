@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-13' class='srclink' href='../src/preferences/src/lib.rs.html#193' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-17' class='srclink' href='../src/preferences/src/lib.rs.html#322' title='goto source code'>[src]</a></span></h1>
 <pre class='rust typedef'>type PreferencesMap&lt;T = <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt; = <a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>, T&gt;;</pre><div class='docblock'><p>Generic key-value store for user data.</p>
 
 <p>This is actually a wrapper type around <a href="https://doc.rust-lang.org/nightly/std/collections/struct.HashMap.html"><code>std::collections::HashMap&lt;String, T&gt;</code></a>
@@ -54,9 +54,9 @@
 data in memory.</p>
 
 <p>To save or load user data, use the methods defined for
-<a href="trait.PreferencesTrait.html"><code>PreferencesTrait</code></a>, which will be automatically implemented for
-<code>PreferencesMap&lt;T&gt;</code> as long as <code>T</code> implements <a href="https://crates.io/crates/serde"><code>serde</code></a>&#39;s <code>Serialize</code> and
-<code>Deserialize</code>.</p>
+<a href="trait.Preferences.html"><code>Preferences</code></a>, which will be automatically implemented for
+<code>PreferencesMap&lt;T&gt;</code> as long as <code>T</code> is serializable. (See the
+<a href="index.html">module documentation</a> for examples and more details.)</p>
 </div></section>
     <section id='search' class="content hidden"></section>
 

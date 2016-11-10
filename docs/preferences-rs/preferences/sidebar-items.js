@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["PreferencesError","Error type representing the errors that can occur when saving or loading user data."]],"fn":[["prefs_base_dir","Get full path to the base directory for preferences."]],"trait":[["Preferences","Trait for types that can be saved & loaded as user data."]],"type":[["PreferencesMap","Generic key-value store for user data."]]});
